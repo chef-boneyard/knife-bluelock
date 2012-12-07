@@ -17,7 +17,6 @@
 
 require 'highline'
 require 'net/ssh/multi'
-require 'readline'
 require 'net/scp'
 require 'chef/knife'
 require 'tempfile'
@@ -75,7 +74,7 @@ class Chef
         :proc => Proc.new { |t| Chef::Config[:knife][:chef_node_name] = t }
 
       option :enable_firewall,
-        :long => "--enable-firewall",
+        :long => "--[no-]enable-firewall",
         :description => "Install a Firewall to control public network access",
         :boolean => true,
         :default => false
